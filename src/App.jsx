@@ -1,12 +1,12 @@
 import './App.css'
 import Form from './Form'
-// import { Provider } from 'react-redux'
-// import store from './store/store'
-function App() {
+import ShowPdf from './ToPdf'
 
+function App() {
   return (
     <>
         <Form></Form>
+        <ShowPdf />
     </>
   )
 }
