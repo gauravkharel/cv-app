@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BasicDocument from './ToPdf'
 
 function Form() {
   const [data, setData] = useState({
@@ -7,6 +8,7 @@ function Form() {
     email: "",
     phonenumber: "",
   });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,18 +17,15 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(
-      `Name: ${data.fullname}, Job Title: ${data.jobtitle}, Email: ${data.email}, Phone Number: ${data.phonenumber} `
-    );
+    setSubmitted(true);
   };
 
-  // const dispatch = useDispatch();
   return (
     <>
       <section>
         <h1 className="">Main form</h1>
       </section>
-      <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-2 " onSubmit={handleSubmit}>
         <h1 className="">Personal Details</h1>
         <label className="flex gap-2" htmlFor="fullname">
           <span>Full Name: </span>
@@ -49,7 +48,6 @@ function Form() {
             placeholder="Software Engineer"
             value={data.jobtitle}
             onChange={handleChange}
-            required
           />
         </label>
         <label htmlFor="email">
@@ -72,8 +70,19 @@ function Form() {
             onChange={handleChange}
           />
         </label>
-        <button className="w-12 p-2 block text-sm bg-violet-500 active:bg-violet-700" type="submit">Submit</button>
+        <button
+          className="w-12 p-2 block text-sm bg-violet-500 active:bg-violet-700"
+          type="submit"
+        >
+          Submit
+        </button>
       </form>
+      {submitted && <div >{data.fullname}</div>}
+      <BasicDocument
+        fullname={data.fullname}
+        email={data.email}
+      />
+
     </>
   );
 }
