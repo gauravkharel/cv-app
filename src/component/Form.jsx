@@ -4,7 +4,7 @@ import FormInputs from "./FormInputs";
 const Form = () => {
   const { setPage } = useFormContext();
 
-  const handleNext = () => setPage(prev => prev + 1)
+  const handleNext = () => setPage(page => page + 1)
 
   return (
     <>
