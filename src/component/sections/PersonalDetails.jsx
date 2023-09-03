@@ -1,7 +1,7 @@
 import { useState } from "react";
-import BasicDocument from './ToPdf'
+// import BasicDocument from './ToPdf'
 
-function Form() {
+function PersonalDetails() {
   const [data, setData] = useState({
     fullname: "",
     jobtitle: "",
@@ -78,13 +78,13 @@ function Form() {
         </button>
       </form>
       {submitted && <div >{data.fullname}</div>}
-      <BasicDocument
+      {/* <BasicDocument
         fullname={data.fullname}
         email={data.email}
-      />
+      /> */}
 
     </>
   );
 }
 
-export default Form;
+export default PersonalDetails;

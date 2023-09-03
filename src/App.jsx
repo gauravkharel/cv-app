@@ -1,15 +1,7 @@
 import './App.css'
-import Form from './Form'
-import ShowPdf from './ToPdf'
+import Form from './component/Form'
 function App() {
-  return (
-    <>
-    <div className="bg-slate-300">  
-        <Form></Form>
-        <ShowPdf />
-    </div>
-    </>
-  )
+  return <Form />
 }
 
 export default App
