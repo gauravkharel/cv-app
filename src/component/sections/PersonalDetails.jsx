@@ -1,32 +1,9 @@
-import { useState } from "react";
-// import BasicDocument from './ToPdf'
-
+import useFormContext from "../../context/useFormContext";
 function PersonalDetails() {
-  const [data, setData] = useState({
-    fullname: "",
-    jobtitle: "",
-    email: "",
-    phonenumber: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setData((prevData) => ({ ...prevData, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const {data, handleChange} = useFormContext();
 
   return (
     <>
-      <section>
-        <h1 className="">Main form</h1>
-      </section>
-      <form className="flex flex-col gap-2 " onSubmit={handleSubmit}>
-        <h1 className="">Personal Details</h1>
         <label className="flex gap-2" htmlFor="fullname">
           <span>Full Name: </span>
           <span className="font-thin text-sm">required</span>
@@ -70,19 +47,7 @@ function PersonalDetails() {
             onChange={handleChange}
           />
         </label>
-        <button
-          className="w-12 p-2 block text-sm bg-violet-500 active:bg-violet-700"
-          type="submit"
-        >
-          Submit
-        </button>
-      </form>
-      {submitted && <div >{data.fullname}</div>}
-      {/* <BasicDocument
-        fullname={data.fullname}
-        email={data.email}
-      /> */}
-
+        
     </>
   );
 }

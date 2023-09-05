@@ -1,7 +1,12 @@
-
 function WorkExperience() {
+
   return (
-    <div>WorkExperience</div>
+    <section>
+      <label htmlFor="">
+        <span></span>
+        <input type="text"  />
+      </label>
+    </section>
   )
 }
 
