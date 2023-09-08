@@ -15,9 +15,9 @@ const Degree = () => {
         <span>Degree: </span>
         <input
           type="text"
-          name="degreename"
+          name="education.degreename"
           placeholder="MSc. in Computer Science"
-          value={data.degreename}
+          value={data.education.degreename}
           onChange={handleChange}
         />
       </label>
@@ -26,9 +26,9 @@ const Degree = () => {
         <span>Graduated On: </span>
         <input
           type="text"
-          name="gradmy"
+          name="education.gradmy"
           placeholder="Sept 2022"
-          value={data.gradmy}
+          value={data.education.gradmy}
           onChange={handleChange}
         />
       </label>
@@ -37,9 +37,9 @@ const Degree = () => {
         <span>University Name: </span>
         <input
           type="text"
-          name="uniname"
+          name="education.uniname"
           placeholder="University of London"
-          value={data.uniname}
+          value={data.education.uniname}
           onChange={handleChange}
         />
       </label>
@@ -48,9 +48,9 @@ const Degree = () => {
         <span>University Adress: </span>
         <input
           type="text"
-          name="uniadd"
+          name="education.uniadd"
           placeholder="University of London"
-          value={data.uniadd}
+          value={data.education.uniadd}
           onChange={handleChange}
         />
       </label>

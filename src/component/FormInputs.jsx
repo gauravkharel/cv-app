@@ -3,6 +3,7 @@ import PersonalDetails from './sections/PersonalDetails'
 import Projects from './sections/Projects'
 import WorkExperience from './sections/WorkExperience'
 import useFormContext from '../context/useFormContext'
+
 function FormInputs() {
 
     const {page} = useFormContext()

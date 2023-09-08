@@ -6,7 +6,7 @@ import {
   StyleSheet,
   PDFViewer,
 } from "@react-pdf/renderer";
-
+import { useState } from "react";
 const styles = StyleSheet.create({
   page: {
     backgroundColor: "red",
@@ -17,12 +17,12 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   viewer: {
-    width: window.innerWidth, //the pdf viewer will take up all of the width and height
-    height: window.innerHeight,
+    width: 800, //the pdf viewer will take up all of the width and height
+    height: 900,
   },
 });
 
-function BasicDocument({fullname, email}) {
+function BasicDocument({ fullname, email }) {
   return (
     <PDFViewer style={styles.viewer}>
       {/* Start of the document*/}
@@ -49,16 +49,16 @@ function BasicDocument({fullname, email}) {
   );
 }
 
-// function ShowPdf(){
-//   const [isRendered, setIsRendered] = useState(false)
-//   const handleClick = () => {
-//     setIsRendered(!isRendered)
-//   }
-//   return (
-//     <div>
-//       <button onClick={handleClick}> Show Pdf</button>
-//       {isRendered && <BasicDocument />}
-//     </div>
-//     )
-// }
-export default BasicDocument;
+function ShowPdf() {
+  const [isRendered, setIsRendered] = useState(false);
+  const handleClick = () => {
+    setIsRendered(!isRendered);
+  };
+  return (
+    <div>
+      <button onClick={handleClick}> Show Pdf</button>
+      {isRendered && <BasicDocument />}
+    </div>
+  );
+}
+export default ShowPdf;

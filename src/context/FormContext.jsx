@@ -1,18 +1,9 @@
 import { createContext, useState } from "react";
+import { getNewPoints } from "../helper/utils";
 
 const FormContext = createContext({});
 /* eslint-disable */
 export const FormProvider = ({ children }) => {
-  const [data, setData] = useState({
-    fullname: "",
-    jobtitle: "",
-    email: "",
-    phonenumber: "",
-    uniname: "",
-    degreename: "",
-    gradmy: "",
-    uniadd: "",
-  });
   const title = {
     0: "Personal Details",
     1: "Work Experience",
@@ -20,11 +11,43 @@ export const FormProvider = ({ children }) => {
     3: "Education",
   };
 
+  const initialData = {
+    personal: {
+      fullname: "",
+      jobtitle: "",
+      email: "",
+      phonenumber: "",
+    },
+    education: {
+      uniname: "",
+      degreename: "",
+      gradmy: "",
+      uniadd: "",
+      points: [getNewPoints(), getNewPoints(), getNewPoints()],
+    },
+    workexperience: [
+      {
+        companyname: "",
+        jobtitle: "",
+        duration: "",
+        address: "",
+        bullets: "",
+        points: [getNewPoints(), getNewPoints(),getNewPoints()],
+      },
+    ]
+  };
+
+  const [data, setData] = useState(initialData);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
+    const [category, fieldName] = name.split(".");
     setData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [category]: {
+        ...prevData[category],
+        [fieldName]: value,
+      },
     }));
   };
 

@@ -9,9 +9,9 @@ function PersonalDetails() {
           <span className="font-thin text-sm">required</span>
           <input
             type="text"
-            name="fullname"
+            name="personal.fullname"
             placeholder="Your Name"
-            value={data.fullname}
+            value={data.personal.fullname}
             onChange={handleChange}
           />
         </label>
@@ -21,9 +21,9 @@ function PersonalDetails() {
           <input
             className="border-1px border-black rounded "
             type="text"
-            name="jobtitle"
+            name="personal.jobtitle"
             placeholder="Software Engineer"
-            value={data.jobtitle}
+            value={data.personal.jobtitle}
             onChange={handleChange}
           />
         </label>
@@ -31,9 +31,9 @@ function PersonalDetails() {
           <span>Email: </span>
           <input
             type="email"
-            name="email"
+            name="personal.email"
             placeholder="placeh@gmail.com"
-            value={data.email}
+            value={data.personal.email}
             onChange={handleChange}
           />
         </label>
@@ -41,9 +41,9 @@ function PersonalDetails() {
           <span>Phone Number </span>
           <input
             type="number"
-            name="phonenumber"
+            name="personal.phonenumber"
             placeholder="123 121 131"
-            value={data.number}
+            value={data.personal.number}
             onChange={handleChange}
           />
         </label>
