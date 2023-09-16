@@ -14,6 +14,7 @@ const Form = () => {
 
   return (
     <>
+
       <button className="p-1 bg-pink-200" type="button" onClick={handleNext}>
         Next
       </button>
@@ -22,7 +23,9 @@ const Form = () => {
       </button>
       <h2 className="text-2xl">{title[page]}</h2>
       <FormInputs />
-      <button type="button" onClick={handleSubmit}>Submit</button>
+      <button 
+        className="bg-blue-500 text-white m-1 text-xl px-4 py-2"
+        type="button" onClick={handleSubmit}>Submit</button>
     </>
   );
 };

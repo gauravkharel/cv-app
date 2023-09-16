@@ -54,7 +54,8 @@ const Degree = () => {
           onChange={handleChange}
         />
       </label>
-    </section>
+    
+      </section>
   );
 };
 

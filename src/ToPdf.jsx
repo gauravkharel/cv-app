@@ -9,8 +9,8 @@ import {
 import { useState } from "react";
 const styles = StyleSheet.create({
   page: {
-    backgroundColor: "red",
-    color: "white",
+    backgroundColor: "white",
+    color: "black",
   },
   section: {
     margin: 10,
@@ -34,14 +34,6 @@ function BasicDocument({ fullname, email }) {
           </View>
           <View style={styles.section}>
             <Text>{email}</Text>
-          </View>
-        </Page>
-        <Page size="A4" style={styles.page}>
-          <View style={styles.section}>
-            <Text>{email}</Text>
-          </View>
-          <View style={styles.section}>
-            <Text>World</Text>
           </View>
         </Page>
       </Document>

@@ -1,18 +1,14 @@
 import {useState} from 'react';
 import {DndContext} from '@dnd-kit/core';
-
 import {Droppable} from '../dnd/Droppable';
 import {Draggable} from '../dnd/Draggable'
 
-
-
 function Projects() {
-  const containers = ['A', 'B', 'C'];
+  const containers = ['A','B','C'];
   const [parent, setParent] = useState(null);
   const draggableMarkup = (
     <Draggable id="draggable">Drag me</Draggable>
   );
-
   return (
     <DndContext onDragEnd={handleDragEnd}>
       {parent === null ? draggableMarkup : null}

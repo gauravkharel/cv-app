@@ -10,7 +10,7 @@ function App() {
           <div className="md:col-span-1">
             <BasicDocument />
           </div>
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 bg-blue-100">
             <Form />
           </div>
         </div>
