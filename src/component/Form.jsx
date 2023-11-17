@@ -1,5 +1,6 @@
 import useFormContext from "../context/useFormContext";
 import FormSections from "./FormSections";
+import Button from "./formui/Button";
 
 const Form = () => {
   const { setPage, title, page, data } = useFormContext();
@@ -14,15 +15,11 @@ const Form = () => {
 
   return (
     <div className="h-[59rem] ">
-        <div className="">
-          <button className="p-1 bg-pink-200" type="button" onClick={handleNext}>
-            Next
-          </button>
-          <button className="p-1 bg-pink-300" type="button" onClick={handlePrev}>
-            Prev
-          </button>
+        <div className="m-2 flex flex-row-reverse gap-2">
+          <Button name='Prev' handleClick={handlePrev} />
+          <Button name='Next' handleClick={handleNext} />
         </div>
-        <h2 className="text-2xl">{title[page]}</h2>
+        <h2 className="text-2xl text-gray-200 antialiased">{title[page]}</h2>
         <FormSections />
         <button
           className="bg-blue-500 text-white m-1 text-xl px-4 py-2"

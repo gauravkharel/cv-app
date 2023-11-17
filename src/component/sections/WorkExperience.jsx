@@ -1,4 +1,5 @@
 import useFormContext from "../../context/useFormContext";
+import Input from "../formui/Input";
 
 function WorkExperience() {
   const { data, handleChange } = useFormContext();
@@ -7,51 +8,33 @@ function WorkExperience() {
       <span>Put your work on here.</span>
       <br />
 
-      <label htmlFor="degreename">
-        <span>Degree: </span>
-        <input
-          type="text"
-          name="education.degreename"
-          placeholder="MSc. in Computer Science"
-          value={data.education.degreename}
-          onChange={handleChange}
-        />
-      </label>
+      <Input
+        type="text"
+        name="workexperience.companyname"
+        handleChange={handleChange}
+        value={data.workexperience.companyname}
+        htmlFor="companyname"
+        title="Company Name"
+      />
 
-      <label htmlFor="gradmy">
-        <span>Graduated On: </span>
-        <input
-          type="text"
-          name="education.gradmy"
-          placeholder="Sept 2022"
-          value={data.education.gradmy}
-          onChange={handleChange}
-        />
-      </label>
-
-      <label htmlFor="uniname">
-        <span>University Name: </span>
-        <input
-          type="text"
-          name="education.uniname"
-          placeholder="University of London"
-          value={data.education.uniname}
-          onChange={handleChange}
-        />
-      </label>
-
-      <label htmlFor="uniadd">
-        <span>University Adress: </span>
-        <input
-          type="text"
-          name="education.uniadd"
-          placeholder="University of London"
-          value={data.education.uniadd}
-          onChange={handleChange}
-        />
-      </label>
+      <Input
+        type="text"
+        name="workexperience.jobtitle"
+        handleChange={handleChange}
+        value={data.workexperience.jobtitle}
+        htmlFor="jobtitle"
+        title="Job Title"
+      />
+      <Input
+        type="text"
+        name="workexperience.jobtitle"
+        handleChange={handleChange}
+        value={data.workexperience.jobtitle}
+        htmlFor="jobtitle"
+        title="Job Title"
+      />
     </section>
-  )
+  );
 }
 
-export default WorkExperience
+export default WorkExperience;

@@ -11,6 +11,7 @@ return (
             handleChange={handleChange}
             value={data.personal.fullname}
             htmlFor='fullname'
+            title='Fullname'
           />
            <Input
             type='text'
@@ -18,6 +19,7 @@ return (
             handleChange={handleChange}
             value={data.personal.jobtitle}
             htmlFor='jobtitle'
+            title='Job Title'
           />
           <Input
             type='email'
@@ -25,6 +27,7 @@ return (
             handleChange={handleChange}
             value={data.personal.email}
             htmlFor='email'
+            title='Email'
           />
           <Input
             type='number'
@@ -32,6 +35,7 @@ return (
             handleChange={handleChange}
             value={data.personal.phonenumber}
             htmlFor='phonenumber'
+            title='Phone Number'
           />
           </span>
     </>
