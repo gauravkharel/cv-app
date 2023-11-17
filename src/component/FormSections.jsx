@@ -4,7 +4,7 @@ import Projects from './sections/Projects'
 import WorkExperience from './sections/WorkExperience'
 import useFormContext from '../context/useFormContext'
 
-function FormInputs() {
+function FormSections() {
 
     const {page} = useFormContext()
 
@@ -23,4 +23,4 @@ function FormInputs() {
   return content
 }
 
-export default FormInputs
+export default FormSections

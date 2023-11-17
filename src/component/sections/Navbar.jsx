@@ -12,7 +12,7 @@ const TopNavBar = () => {
   };
 
   return (
-    <nav className="bg-blue-500 p-4">
+    <nav className="bg-gray-500 p-4">
       <div className="flex justify-center space-x-4">
         <button
           onClick={() => toggleSection('Personal Details')}
