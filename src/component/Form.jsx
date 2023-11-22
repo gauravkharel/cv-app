@@ -10,14 +10,18 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const workExperiencePoints = data.workexperience[0].points;
+
+    const descriptions = workExperiencePoints.map((point) => point.text);
+
     console.log(JSON.stringify(data));
   };
 
   return (
     <div className="h-[59rem] ">
         <div className="m-2 flex flex-row-reverse gap-2">
-          <Button name='Prev' handleClick={handlePrev} />
-          <Button name='Next' handleClick={handleNext} />
+          <Button name='Prev' handleClick={handlePrev} isNext={true} />
+          <Button name='Next' handleClick={handleNext} isNext={false} />
         </div>
         <h2 className="text-2xl text-gray-200 antialiased">{title[page]}</h2>
         <FormSections />
